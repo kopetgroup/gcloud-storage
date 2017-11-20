@@ -128,7 +128,7 @@ $app->post('/upload', function () use ($app) {
 
 	  $my_bucket = $app['bucket_name'];
 	  $path = "gs://${my_bucket}/";
-	  $ext = pathinfo($_FILES['uploaded_file']['name'], PATHINFO_EXTENSION)
+	  $ext = pathinfo($_FILES['uploaded_file']['name'], PATHINFO_EXTENSION);
 	  $fn = sha1($_FILES['uploaded_file']['name']).'.'.$ext;
     $path = $path . basename( $fn);
 
